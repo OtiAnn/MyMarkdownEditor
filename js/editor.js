@@ -3,7 +3,7 @@ $.widget('sme.editor', {
   options: {
     preview: '#preview',
     autoPreview: true,
-    codeMirrorOptions: {
+    codeMirror: {
       mode: 'gfm',
       lineNumbers: true,
       matchBrackets: true,
@@ -37,7 +37,7 @@ $.widget('sme.editor', {
     return CodeMirror.fromTextArea(
       this.element[0],
       $.extend(
-        this.options.codeMirrorOptions,
+        this.options.codeMirror,
         {
           onChange: function(e){
             var val = e.getValue();

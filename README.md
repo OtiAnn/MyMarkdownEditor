@@ -12,6 +12,46 @@ MarkdownEditor inspired by jbt/markdown-editor
 5. pretty codemirror style
 6. 沒有編輯工具欄
 
+##Usage
+
+### DOM settings
+The element must be a textarea.
+``` HTML
+<textarea id="editor"></textarea>
+```
+
+### Simple usage
+
+``` javascript
+$('#editor').editor()
+```
+
+### Initialize with configs
+Codemirror configs should nested pass in. All Codemirror configs are available. See also: [Codemirror configuration]
+
+``` javascript
+$('#editor').editor({
+  autopreview: true,
+  codeMirror:{
+    // nested options
+    lineNumbers: true
+  }
+})
+```
+## Configuration
+key|type| default
+---|-----|---
+preview| String or jquery object | '#preview'
+autoPreview| boolean | true
+
+## Methods
+``` javascript
+var editor = $('#editor').editor();
+
+editor.editor('getInput') //call method
+```
+### getInput
+### getOutput
 
 ## Tech
 
@@ -23,3 +63,4 @@ MarkdownEditor inspired by jbt/markdown-editor
 程式碼上色
 
 
+[Codemirror configuration]: http://codemirror.net/doc/manual.html#config
