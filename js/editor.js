@@ -2,6 +2,16 @@ var smeEditorInstance;
 $.widget('sme.editor', {
   options: {
     preview: '#preview',
+    autoPreview: true,
+    codeMirrorOptions: {
+      mode: 'gfm',
+      lineNumbers: true,
+      matchBrackets: true,
+      lineWrapping: true,
+      styleActiveLine: true,
+      theme: 'solarized light'
+    },
+    change: null
   },
 
   _create: function(){
@@ -18,28 +28,50 @@ $.widget('sme.editor', {
       }
     });
 
-    var editor = CodeMirror.fromTextArea(this.element[0], {
-      mode: 'gfm',
-      lineNumbers: true,
-      matchBrackets: true,
-      lineWrapping: true,
-      styleActiveLine: true,
-      theme: 'solarized light',
-      onChange: this._update
-    });
-
-    this._update(editor);
+    this.editor = this._initCodeMirror();
+    this._setOutput(this.getOutput());
   },
 
-  _update: function(e, text){
-    // need outside instance
-    that = smeEditorInstance
-    var val = e.getValue();
-    that._setOutput(val);
+  _initCodeMirror: function(){
+    var that = smeEditorInstance;
+    return CodeMirror.fromTextArea(
+      this.element[0],
+      $.extend(
+        this.options.codeMirrorOptions,
+        {
+          onChange: function(e){
+            var val = e.getValue();
+            that._setOutput(val);
+            that._trigger( "change", this.getOutput );
+          }
+        }
+      )
+    );
+  },
+
+  _refresh: function() {
+    this._initCodeMirror();
+    this._setOutput(this.getOutput());
+  },
+
+  _setOptions: function() {
+    // _super and _superApply handle keeping the right this-context
+    this._superApply( arguments );
+    this._refresh();
+  },
+
+  getInput: function(){
+    return this.editor.getValue();
+  },
+
+  getOutput: function(){
+    return marked(this.editor.getValue());
   },
 
   _setOutput: function(val){
-    $(this.options.preview).html( marked(val) );
+    if( $(this.options.preview).length != 0 && this.options.autoPreview ){
+      $(this.options.preview).html( marked(val) );
+    }
   }
 
 });

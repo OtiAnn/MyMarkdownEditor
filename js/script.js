@@ -1,3 +1,3 @@
 $().ready(function() {
-  $('#editor').editor();
+  window.editor = $('#editor').editor();
 })
