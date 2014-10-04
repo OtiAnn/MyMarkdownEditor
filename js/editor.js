@@ -23,7 +23,8 @@ $.widget('sme.editor', {
       lineNumbers: true,
       matchBrackets: true,
       lineWrapping: true,
-      theme: 'default',
+      styleActiveLine: true,
+      theme: 'solarized light',
       onChange: this._update
     });
 

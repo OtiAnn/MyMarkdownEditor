@@ -1,7 +1,7 @@
 MyMarkdownEditor
 ================
 
-MarkdownEditor inspired by https://github.com/jbt/markdown-editor
+MarkdownEditor inspired by jbt/markdown-editor
 
 
 ## Feature
@@ -16,6 +16,10 @@ MarkdownEditor inspired by https://github.com/jbt/markdown-editor
 ## Tech
 
 ### marked
+將markdown語法轉換成html
 ### codemirror
+取代textarea，重新改寫逼前區域文字格式
 ### highlight.js
+程式碼上色
+
 
