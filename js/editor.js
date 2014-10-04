@@ -1,8 +1,11 @@
+var smeEditorInstance;
 $.widget('sme.editor', {
   options: {
-    $preview: $('preview'),
+    preview: '#preview',
   },
+
   _create: function(){
+    smeEditorInstance = this
     var languageOverrides = {
       js: 'javascript',
       html: 'xml'
@@ -15,32 +18,27 @@ $.widget('sme.editor', {
       }
     });
 
-    this.editor = CodeMirror.fromTextArea(this.element, {
+    var editor = CodeMirror.fromTextArea(this.element[0], {
       mode: 'gfm',
       lineNumbers: true,
       matchBrackets: true,
       lineWrapping: true,
       theme: 'default',
-      onChange: update
+      onChange: this._update
     });
 
+    this._update(editor);
   },
 
-  update: function(e){
+  _update: function(e, text){
+    // need outside instance
+    that = smeEditorInstance
     var val = e.getValue();
+    that._setOutput(val);
+  },
 
-    setOutput(val);
-
-    clearTimeout(hashto);
-    hashto = setTimeout(updateHash, 1000);
+  _setOutput: function(val){
+    $(this.options.preview).html( marked(val) );
   }
-
-  setOutput: function(val){
-    this.options.previewElem.html( marked(val) )
-  }
-
-
-
-
 
 });
