@@ -9,6 +9,7 @@ $.widget('sme.editor', {
       matchBrackets: true,
       lineWrapping: true,
       styleActiveLine: true,
+      tabSize: 2,
       theme: 'solarized light'
     },
     change: null
