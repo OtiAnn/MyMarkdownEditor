@@ -35,19 +35,13 @@ $.widget('sme.editor', {
 
   _initCodeMirror: function(){
     var that = smeEditorInstance;
-    return CodeMirror.fromTextArea(
-      this.element[0],
-      $.extend(
-        this.options.codeMirror,
-        {
-          onChange: function(e){
-            var val = e.getValue();
-            that._setOutput(val);
-            that._trigger( "change", this.getOutput );
-          }
-        }
-      )
-    );
+    cm = CodeMirror.fromTextArea(this.element[0], this.options.codeMirror)
+    cm.on("change", function(cm, change) {
+      var val = cm.getValue();
+      that._setOutput(val);
+      that._trigger( "change", this.getOutput );
+    });
+    return cm;
   },
 
   _refresh: function() {
