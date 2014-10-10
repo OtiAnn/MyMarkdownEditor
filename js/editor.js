@@ -5,7 +5,7 @@ $.widget('sme.editor', {
     autoPreview: true,
     codeMirror: {
       mode: 'gfm',
-      lineNumbers: true,
+      lineNumbers: false,
       matchBrackets: true,
       lineWrapping: true,
       styleActiveLine: true,

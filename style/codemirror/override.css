@@ -19,7 +19,7 @@
   padding: 10px 0; /* Vertical padding around content */
 }
 .CodeMirror pre {
-  padding: 0 10px; /* Horizontal padding of content */
+  padding: 0 20px; /* Horizontal padding of content */
 }
 
 .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
@@ -109,30 +109,30 @@ div.CodeMirror-overwrite div.CodeMirror-cursor {}
 .cm-s-otis .cm-operator {}
 .cm-s-otis .cm-variable-2 {color: #222;}
 .cm-s-otis .cm-variable-3 {color: #666;}
-.cm-s-otis .cm-comment {color:#345;}
-.cm-s-otis .cm-string {color: #a11;}
+.cm-s-otis .cm-comment {color:rgb(39, 115, 189);}
+.cm-s-otis .cm-string {color: #170;}
 .cm-s-otis .cm-string-2 {color: #f50;}
 .cm-s-otis .cm-meta {color: #555;}
 .cm-s-otis .cm-qualifier {color: #555;}
 .cm-s-otis .cm-builtin {color: #30a;}
 .cm-s-otis .cm-bracket {color: #997;}
-.cm-s-otis .cm-tag {color: #170;}
+.cm-s-otis .cm-tag {color: rgb(39, 115, 189);}
 .cm-s-otis .cm-attribute {color: #00c;}
 .cm-s-otis .cm-header {color: rgba(36, 106, 166, 1);}
 .cm-s-otis .cm-quote {color: #111;}
 .cm-s-otis .cm-hr {color: #999;}
-.cm-s-otis .cm-link {color: rgba(36, 106, 166, 1);}
-.cm-s-otis .cm-strong {color: rgba(36, 106, 166, 1);}
+.cm-s-otis .cm-link {color: rgb(39, 115, 189);}
+.cm-s-otis .cm-strong {color: rgb(39, 115, 189);}
 
 .cm-negative {color: #d44;}
 .cm-positive {color: #292;}
-.cm-header, .cm-strong {font-weight: bold;}
+.cm-header, .cm-strong, .cm-tag{font-weight: bold;}
 .cm-header{ line-height: 40px; }
 .cm-header-1 { font-size: 24px; }
 .cm-header-2 { font-size: 20px; }
 .cm-header-3 { font-size: 18px; }
 .cm-header-4 { font-size: 16px; }
-.cm-em {font-style: italic; color:rgba(36, 106, 166, 1);}
+.cm-em {font-style: italic; color:rgb(39, 115, 189);}
 .cm-link {text-decoration: underline; font-weight: bold;}
 
 .cm-s-otis .cm-error {color: rgba(191, 97, 106, 1);}
