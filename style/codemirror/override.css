@@ -1,0 +1,146 @@
+/* BASICS */
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 300px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #777;
+}
+.CodeMirror-scroll {
+  /* Set scrolling behaviour here */
+  overflow: auto;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 10px 0; /* Vertical padding around content */
+}
+.CodeMirror pre {
+  padding: 0 10px; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white; /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap;
+}
+.CodeMirror-linenumbers {}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.CodeMirror-guttermarker { color: black; }
+.CodeMirror-guttermarker-subtle { color: #999; }
+
+/* CURSOR */
+
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid black;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: #7e7;
+}
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursors {
+  z-index: 1;
+}
+
+.cm-animate-fat-cursor {
+  width: auto;
+  border: 0;
+  -webkit-animation: blink 1.06s steps(1) infinite;
+  -moz-animation: blink 1.06s steps(1) infinite;
+  animation: blink 1.06s steps(1) infinite;
+}
+@-moz-keyframes blink {
+  0% { background: #7e7; }
+  50% { background: none; }
+  100% { background: #7e7; }
+}
+@-webkit-keyframes blink {
+  0% { background: #7e7; }
+  50% { background: none; }
+  100% { background: #7e7; }
+}
+@keyframes blink {
+  0% { background: #7e7; }
+  50% { background: none; }
+  100% { background: #7e7; }
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+div.CodeMirror-overwrite div.CodeMirror-cursor {}
+
+.cm-tab { display: inline-block; }
+
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+  position: absolute;
+}
+
+/* DEFAULT THEME */
+
+.cm-s-otis .cm-keyword {color: #708;}
+.cm-s-otis .cm-atom {color: #219;}
+.cm-s-otis .cm-number {color: #164;}
+.cm-s-otis .cm-def {color: #00f;}
+.cm-s-otis .cm-variable,
+.cm-s-otis .cm-punctuation,
+.cm-s-otis .cm-property,
+.cm-s-otis .cm-operator {}
+.cm-s-otis .cm-variable-2 {color: #222;}
+.cm-s-otis .cm-variable-3 {color: #666;}
+.cm-s-otis .cm-comment {color:#345;}
+.cm-s-otis .cm-string {color: #a11;}
+.cm-s-otis .cm-string-2 {color: #f50;}
+.cm-s-otis .cm-meta {color: #555;}
+.cm-s-otis .cm-qualifier {color: #555;}
+.cm-s-otis .cm-builtin {color: #30a;}
+.cm-s-otis .cm-bracket {color: #997;}
+.cm-s-otis .cm-tag {color: #170;}
+.cm-s-otis .cm-attribute {color: #00c;}
+.cm-s-otis .cm-header {color: rgba(36, 106, 166, 1);}
+.cm-s-otis .cm-quote {color: #111;}
+.cm-s-otis .cm-hr {color: #999;}
+.cm-s-otis .cm-link {color: rgba(36, 106, 166, 1);}
+.cm-s-otis .cm-strong {color: rgba(36, 106, 166, 1);}
+
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-header{ line-height: 40px; }
+.cm-header-1 { font-size: 24px; }
+.cm-header-2 { font-size: 20px; }
+.cm-header-3 { font-size: 18px; }
+.cm-header-4 { font-size: 16px; }
+.cm-em {font-style: italic; color:rgba(36, 106, 166, 1);}
+.cm-link {text-decoration: underline; font-weight: bold;}
+
+.cm-s-otis .cm-error {color: rgba(191, 97, 106, 1);}
+.cm-invalidchar {color: #f00;}
+
+/* Default styles for common addons */
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
+.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }
+.CodeMirror-activeline-background {background: #eee;}

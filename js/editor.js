@@ -10,7 +10,7 @@ $.widget('sme.editor', {
       lineWrapping: true,
       styleActiveLine: true,
       tabSize: 2,
-      theme: 'solarized light'
+      theme: 'otis'
     },
     change: null
   },
