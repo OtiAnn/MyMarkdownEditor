@@ -1,16 +1,13 @@
 MyMarkdownEditor
 ================
 
-MarkdownEditor inspired by jbt/markdown-editor
+DEMO: http://annotis.github.io/MyMarkdownEditor/
 
 
 ## Feature
-1. 用Jquery widget包裝
-2. 定義事件存取
-3. widget api
-4. 拿掉url hash儲存
-5. pretty codemirror style
-6. 沒有編輯工具欄
+1. It's a Jquery widget
+2. Markdown syntax real-time hightlight
+3. No toolbar
 
 ##Usage
 
@@ -55,12 +52,9 @@ editor.editor('getInput') //call method
 
 ## Tech
 
-### marked
-將markdown語法轉換成html
-### codemirror
-取代textarea，重新改寫逼前區域文字格式
-### highlight.js
-程式碼上色
+1. marked
+2. codemirror
+3. highlight.js
 
 
 [Codemirror configuration]: http://codemirror.net/doc/manual.html#config
